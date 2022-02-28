@@ -1,31 +1,20 @@
 {
-  "name": "@moneybutton/paymail-client",
-  "version": "0.38.3",
-  "description": "Money Button isomorphic Paymail utilities.",
-  "main": "dist/paymail-client.cjs.js",
-  "module": "dist/paymail-client.esm.js",
-  "unpkg": "dist/paymail-client.iife.js",
+  "name": "paymail-client",
+  "version": "1.0.0",
+  "description": "Paymail utilities that is inspire from Money Button",
+  "main": "src/index.js",
   "library": "PaymailClient",
   "files": [
-    "dist/**"
+    "src/**"
   ],
   "scripts": {
     "lint": "standard --parser=babel-eslint --fix",
     "test": "mocha",
-    "build": "npx rollup -c",
-    "build:dev": "npx rollup -c",
-    "build:prod": "NODE_ENV=production npm run build",
-    "build:watch": "npm run build -w",
-    "prepublish": "npm run build:prod",
     "dev": "npm run build:watch"
   },
-  "author": "Yours Inc.",
+  "author": "ChainBow Team.",
   "license": "Open-BSV",
-  "publishConfig": {
-    "access": "public"
-  },
   "dependencies": {
-    "@babel/runtime": "7.15.4",
     "bluebird": "^3.7.2",
     "bsv": "^1.5.5",
     "cross-fetch": "^3.1.4"
@@ -38,9 +27,6 @@
     "@babel/polyfill": "^7.10.4",
     "@babel/preset-env": "7.15.6",
     "@babel/register": "^7.10.5",
-    "@rollup/plugin-commonjs": "20.0.0",
-    "@rollup/plugin-node-resolve": "13.0.4",
-    "@rollup/plugin-replace": "3.0.0",
     "babel-eslint": "10.1.0",
     "bdd-lazy-var": "2.6.1",
     "chai": "4.3.4",
@@ -48,23 +34,7 @@
     "http-server": "13.0.2",
     "mocha": "9.1.1",
     "mocha-define": "^0.2.0",
-    "rollup": "2.56.3",
-    "rollup-plugin-babel": "4.4.0",
-    "rollup-plugin-node-builtins": "2.1.2",
-    "rollup-plugin-node-globals": "1.4.0",
-    "should": "13.2.3",
-    "standard": "16.0.3",
+    "moment": "^2.29.1",
     "ts-node": "^10.1.0"
-  },
-  "standard": {
-    "globals": [
-      "afterEach",
-      "beforeEach",
-      "describe",
-      "it"
-    ],
-    "ignore": [
-      "docs/"
-    ]
   }
 }
