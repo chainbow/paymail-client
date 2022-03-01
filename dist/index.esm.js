@@ -291,23 +291,17 @@ var DnsClient = /*#__PURE__*/function () {
               case 5:
                 data = dnsResponse.Answer[0].data.split(' ');
                 port = data[2];
-                responseDomain = data[3];
+                responseDomain = data[3]; // if (!dnsResponse.AD && !this.domainsAreEqual(aDomain, responseDomain)) {
+                //   throw new Error('Insecure domain.')
+                // }
 
-                if (!(!dnsResponse.AD && !this.domainsAreEqual(aDomain, responseDomain))) {
-                  _context5.next = 10;
-                  break;
-                }
-
-                throw new Error('Insecure domain.');
-
-              case 10:
                 return _context5.abrupt("return", {
                   port: port,
                   domain: responseDomain,
                   isSecure: dnsResponse.AD
                 });
 
-              case 11:
+              case 9:
               case "end":
                 return _context5.stop();
             }

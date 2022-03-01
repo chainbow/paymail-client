@@ -89,9 +89,9 @@ class DnsClient {
     const data = dnsResponse.Answer[0].data.split(' ')
     const port = data[2]
     const responseDomain = data[3]
-    if (!dnsResponse.AD && !this.domainsAreEqual(aDomain, responseDomain)) {
-      throw new Error('Insecure domain.')
-    }
+    // if (!dnsResponse.AD && !this.domainsAreEqual(aDomain, responseDomain)) {
+    //   throw new Error('Insecure domain.')
+    // }
     return {
       port,
       domain: responseDomain,
