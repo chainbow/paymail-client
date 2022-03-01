@@ -17,7 +17,7 @@
   "author": "ChainBow Team.",
   "license": "Open-BSV",
   "dependencies": {
-    "@babel/plugin-transform-runtime": "^7.17.0",
+    "@babel/runtime": "^7.17.2",
     "bluebird": "^3.7.2",
     "bsv": "^1.5.5",
     "cross-fetch": "^3.1.4"
@@ -27,9 +27,11 @@
     "@babel/core": "^7.17.5",
     "@babel/plugin-proposal-class-properties": "^7.10.4",
     "@babel/plugin-proposal-object-rest-spread": "^7.15.6",
+    "@babel/plugin-transform-runtime": "^7.17.0",
     "@babel/polyfill": "^7.10.4",
     "@babel/preset-env": "^7.16.11",
     "@babel/register": "^7.10.5",
+    "@babel/runtime-corejs3": "^7.17.2",
     "@rollup/plugin-babel": "^5.1.0",
     "@rollup/plugin-commonjs": "^21.0.2",
     "@rollup/plugin-node-resolve": "^13.1.3",
