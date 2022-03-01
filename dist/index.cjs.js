@@ -1,54 +1,34 @@
 'use strict';
 
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); Object.defineProperty(subClass, "prototype", { writable: false }); if (superClass) _setPrototypeOf(subClass, superClass); }
+var _inherits = require("@babel/runtime/helpers/inherits");
+
+var _possibleConstructorReturn = require("@babel/runtime/helpers/possibleConstructorReturn");
+
+var _getPrototypeOf = require("@babel/runtime/helpers/getPrototypeOf");
+
+var _wrapNativeSuper = require("@babel/runtime/helpers/wrapNativeSuper");
+
+var _slicedToArray = require("@babel/runtime/helpers/slicedToArray");
+
+var _defineProperty = require("@babel/runtime/helpers/defineProperty");
+
+var _regeneratorRuntime = require("@babel/runtime/regenerator");
+
+var _asyncToGenerator = require("@babel/runtime/helpers/asyncToGenerator");
+
+var _classCallCheck = require("@babel/runtime/helpers/classCallCheck");
+
+var _createClass = require("@babel/runtime/helpers/createClass");
+
+var _typeof = require("@babel/runtime/helpers/typeof");
 
 function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = _getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
 
-function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } else if (call !== void 0) { throw new TypeError("Derived constructors may only return object or undefined"); } return _assertThisInitialized(self); }
-
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
-function _wrapNativeSuper(Class) { var _cache = typeof Map === "function" ? new Map() : undefined; _wrapNativeSuper = function _wrapNativeSuper(Class) { if (Class === null || !_isNativeFunction(Class)) return Class; if (typeof Class !== "function") { throw new TypeError("Super expression must either be null or a function"); } if (typeof _cache !== "undefined") { if (_cache.has(Class)) return _cache.get(Class); _cache.set(Class, Wrapper); } function Wrapper() { return _construct(Class, arguments, _getPrototypeOf(this).constructor); } Wrapper.prototype = Object.create(Class.prototype, { constructor: { value: Wrapper, enumerable: false, writable: true, configurable: true } }); return _setPrototypeOf(Wrapper, Class); }; return _wrapNativeSuper(Class); }
-
-function _construct(Parent, args, Class) { if (_isNativeReflectConstruct()) { _construct = Reflect.construct; } else { _construct = function _construct(Parent, args, Class) { var a = [null]; a.push.apply(a, args); var Constructor = Function.bind.apply(Parent, a); var instance = new Constructor(); if (Class) _setPrototypeOf(instance, Class.prototype); return instance; }; } return _construct.apply(null, arguments); }
-
 function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); return true; } catch (e) { return false; } }
-
-function _isNativeFunction(fn) { return Function.toString.call(fn).indexOf("[native code]") !== -1; }
-
-function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
-
-function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
-
-function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
-
-function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
-
-function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
-
-function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
-
-function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
-
-function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys(Object(source), !0).forEach(function (key) { _defineProperty(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
-
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
-function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
-
-function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
-
-function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof(obj); }
 
 Object.defineProperty(exports, '__esModule', {
   value: true
@@ -108,9 +88,9 @@ var DnsOverHttps = /*#__PURE__*/function () {
   _createClass(DnsOverHttps, [{
     key: "resolveSrv",
     value: function () {
-      var _resolveSrv = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee(aDomain) {
+      var _resolveSrv = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime.mark(function _callee(aDomain) {
         var response, body;
-        return regeneratorRuntime.wrap(function _callee$(_context) {
+        return _regeneratorRuntime.wrap(function _callee$(_context) {
           while (1) {
             switch (_context.prev = _context.next) {
               case 0:
@@ -143,8 +123,8 @@ var DnsOverHttps = /*#__PURE__*/function () {
   }, {
     key: "queryBsvaliasDomain",
     value: function () {
-      var _queryBsvaliasDomain = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee2(aDomain) {
-        return regeneratorRuntime.wrap(function _callee2$(_context2) {
+      var _queryBsvaliasDomain = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime.mark(function _callee2(aDomain) {
+        return _regeneratorRuntime.wrap(function _callee2$(_context2) {
           while (1) {
             switch (_context2.prev = _context2.next) {
               case 0:
@@ -185,19 +165,19 @@ var DnsClient = /*#__PURE__*/function () {
   _createClass(DnsClient, [{
     key: "checkSrv",
     value: function () {
-      var _checkSrv = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee4(aDomain) {
+      var _checkSrv = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime.mark(function _callee4(aDomain) {
         var _this = this;
 
-        return regeneratorRuntime.wrap(function _callee4$(_context4) {
+        return _regeneratorRuntime.wrap(function _callee4$(_context4) {
           while (1) {
             switch (_context4.prev = _context4.next) {
               case 0:
                 return _context4.abrupt("return", new Promise__default["default"](function (resolve, reject) {
                   _this.dns.resolveSrv("_bsvalias._tcp.".concat(aDomain), /*#__PURE__*/function () {
-                    var _ref = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee3(err, result) {
+                    var _ref = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime.mark(function _callee3(err, result) {
                       var _result$, domainFromDns, port, isSecure;
 
-                      return regeneratorRuntime.wrap(function _callee3$(_context3) {
+                      return _regeneratorRuntime.wrap(function _callee3$(_context3) {
                         while (1) {
                           switch (_context3.prev = _context3.next) {
                             case 0:
@@ -317,9 +297,9 @@ var DnsClient = /*#__PURE__*/function () {
   }, {
     key: "validateDnssec",
     value: function () {
-      var _validateDnssec = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee5(aDomain) {
+      var _validateDnssec = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime.mark(function _callee5(aDomain) {
         var dnsResponse, data, port, responseDomain;
-        return regeneratorRuntime.wrap(function _callee5$(_context5) {
+        return _regeneratorRuntime.wrap(function _callee5$(_context5) {
           while (1) {
             switch (_context5.prev = _context5.next) {
               case 0:
@@ -383,8 +363,8 @@ var Http = /*#__PURE__*/function () {
   _createClass(Http, [{
     key: "get",
     value: function () {
-      var _get = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee6(url) {
-        return regeneratorRuntime.wrap(function _callee6$(_context6) {
+      var _get = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime.mark(function _callee6(url) {
+        return _regeneratorRuntime.wrap(function _callee6$(_context6) {
           while (1) {
             switch (_context6.prev = _context6.next) {
               case 0:
@@ -407,8 +387,8 @@ var Http = /*#__PURE__*/function () {
   }, {
     key: "postJson",
     value: function () {
-      var _postJson = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee7(url, body) {
-        return regeneratorRuntime.wrap(function _callee7$(_context7) {
+      var _postJson = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime.mark(function _callee7(url, body) {
+        return _regeneratorRuntime.wrap(function _callee7$(_context7) {
           while (1) {
             switch (_context7.prev = _context7.next) {
               case 0:
@@ -437,11 +417,11 @@ var Http = /*#__PURE__*/function () {
   }, {
     key: "_basicRequest",
     value: function () {
-      var _basicRequest2 = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee8(url) {
+      var _basicRequest2 = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime.mark(function _callee8(url) {
         var options,
             timeout,
             _args8 = arguments;
-        return regeneratorRuntime.wrap(function _callee8$(_context8) {
+        return _regeneratorRuntime.wrap(function _callee8$(_context8) {
           while (1) {
             switch (_context8.prev = _context8.next) {
               case 0:
@@ -489,10 +469,10 @@ var EndpointResolver = /*#__PURE__*/function () {
   _createClass(EndpointResolver, [{
     key: "getIdentityUrlFor",
     value: function () {
-      var _getIdentityUrlFor = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee9(aPaymail) {
+      var _getIdentityUrlFor = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime.mark(function _callee9(aPaymail) {
         var _aPaymail$split, _aPaymail$split2, alias, domain, apiDescriptor, identityUrl;
 
-        return regeneratorRuntime.wrap(function _callee9$(_context9) {
+        return _regeneratorRuntime.wrap(function _callee9$(_context9) {
           while (1) {
             switch (_context9.prev = _context9.next) {
               case 0:
@@ -526,10 +506,10 @@ var EndpointResolver = /*#__PURE__*/function () {
   }, {
     key: "getAddressUrlFor",
     value: function () {
-      var _getAddressUrlFor = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee10(aPaymail) {
+      var _getAddressUrlFor = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime.mark(function _callee10(aPaymail) {
         var _aPaymail$split3, _aPaymail$split4, alias, domain, apiDescriptor, addressUrl;
 
-        return regeneratorRuntime.wrap(function _callee10$(_context10) {
+        return _regeneratorRuntime.wrap(function _callee10$(_context10) {
           while (1) {
             switch (_context10.prev = _context10.next) {
               case 0:
@@ -563,10 +543,10 @@ var EndpointResolver = /*#__PURE__*/function () {
   }, {
     key: "getVerifyUrlFor",
     value: function () {
-      var _getVerifyUrlFor = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee11(aPaymail, aPubkey) {
+      var _getVerifyUrlFor = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime.mark(function _callee11(aPaymail, aPubkey) {
         var _aPaymail$split5, _aPaymail$split6, alias, domain, apiDescriptor, url;
 
-        return regeneratorRuntime.wrap(function _callee11$(_context11) {
+        return _regeneratorRuntime.wrap(function _callee11$(_context11) {
           while (1) {
             switch (_context11.prev = _context11.next) {
               case 0:
@@ -600,10 +580,10 @@ var EndpointResolver = /*#__PURE__*/function () {
   }, {
     key: "getPublicProfileUrlFor",
     value: function () {
-      var _getPublicProfileUrlFor = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee12(aPaymail) {
+      var _getPublicProfileUrlFor = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime.mark(function _callee12(aPaymail) {
         var _aPaymail$split7, _aPaymail$split8, alias, domain, apiDescriptor, url;
 
-        return regeneratorRuntime.wrap(function _callee12$(_context12) {
+        return _regeneratorRuntime.wrap(function _callee12$(_context12) {
           while (1) {
             switch (_context12.prev = _context12.next) {
               case 0:
@@ -637,10 +617,10 @@ var EndpointResolver = /*#__PURE__*/function () {
   }, {
     key: "getSendTxUrlFor",
     value: function () {
-      var _getSendTxUrlFor = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee13(aPaymail) {
+      var _getSendTxUrlFor = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime.mark(function _callee13(aPaymail) {
         var _aPaymail$split9, _aPaymail$split10, alias, domain, apiDescriptor, url;
 
-        return regeneratorRuntime.wrap(function _callee13$(_context13) {
+        return _regeneratorRuntime.wrap(function _callee13$(_context13) {
           while (1) {
             switch (_context13.prev = _context13.next) {
               case 0:
@@ -674,10 +654,10 @@ var EndpointResolver = /*#__PURE__*/function () {
   }, {
     key: "getP2pPatmentDestinationUrlFor",
     value: function () {
-      var _getP2pPatmentDestinationUrlFor = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee14(aPaymail) {
+      var _getP2pPatmentDestinationUrlFor = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime.mark(function _callee14(aPaymail) {
         var _aPaymail$split11, _aPaymail$split12, alias, domain, apiDescriptor, url;
 
-        return regeneratorRuntime.wrap(function _callee14$(_context14) {
+        return _regeneratorRuntime.wrap(function _callee14$(_context14) {
           while (1) {
             switch (_context14.prev = _context14.next) {
               case 0:
@@ -711,9 +691,9 @@ var EndpointResolver = /*#__PURE__*/function () {
   }, {
     key: "domainHasCapability",
     value: function () {
-      var _domainHasCapability = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee15(aDomain, capability) {
+      var _domainHasCapability = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime.mark(function _callee15(aDomain, capability) {
         var apiDescriptor;
-        return regeneratorRuntime.wrap(function _callee15$(_context15) {
+        return _regeneratorRuntime.wrap(function _callee15$(_context15) {
           while (1) {
             switch (_context15.prev = _context15.next) {
               case 0:
@@ -741,10 +721,10 @@ var EndpointResolver = /*#__PURE__*/function () {
   }, {
     key: "getApiDescriptionFor",
     value: function () {
-      var _getApiDescriptionFor = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee16(aDomain) {
+      var _getApiDescriptionFor = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime.mark(function _callee16(aDomain) {
         var _yield$this$getWellKn, domain, port, apiDescriptor;
 
-        return regeneratorRuntime.wrap(function _callee16$(_context16) {
+        return _regeneratorRuntime.wrap(function _callee16$(_context16) {
           while (1) {
             switch (_context16.prev = _context16.next) {
               case 0:
@@ -788,9 +768,9 @@ var EndpointResolver = /*#__PURE__*/function () {
   }, {
     key: "fetchApiDescriptor",
     value: function () {
-      var _fetchApiDescriptor = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee17(domain, port) {
+      var _fetchApiDescriptor = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime.mark(function _callee17(domain, port) {
         var protocol, requestPort, requestDomain, wellKnown, apiDescriptor;
-        return regeneratorRuntime.wrap(function _callee17$(_context17) {
+        return _regeneratorRuntime.wrap(function _callee17$(_context17) {
           while (1) {
             switch (_context17.prev = _context17.next) {
               case 0:
@@ -835,8 +815,8 @@ var EndpointResolver = /*#__PURE__*/function () {
   }, {
     key: "getWellKnownBaseUrl",
     value: function () {
-      var _getWellKnownBaseUrl = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee18(aDomain) {
-        return regeneratorRuntime.wrap(function _callee18$(_context18) {
+      var _getWellKnownBaseUrl = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime.mark(function _callee18(aDomain) {
+        return _regeneratorRuntime.wrap(function _callee18$(_context18) {
           while (1) {
             switch (_context18.prev = _context18.next) {
               case 0:
@@ -859,8 +839,8 @@ var EndpointResolver = /*#__PURE__*/function () {
   }, {
     key: "ensureCapabilityFor",
     value: function () {
-      var _ensureCapabilityFor = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee19(aDomain, aCapability) {
-        return regeneratorRuntime.wrap(function _callee19$(_context19) {
+      var _ensureCapabilityFor = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime.mark(function _callee19(aDomain, aCapability) {
+        return _regeneratorRuntime.wrap(function _callee19$(_context19) {
           while (1) {
             switch (_context19.prev = _context19.next) {
               case 0:
@@ -1066,9 +1046,9 @@ var BrowserDns = /*#__PURE__*/function () {
   _createClass(BrowserDns, [{
     key: "resolveSrv",
     value: function () {
-      var _resolveSrv2 = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee20(aDomain, aCallback) {
+      var _resolveSrv2 = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime.mark(function _callee20(aDomain, aCallback) {
         var response, data;
-        return regeneratorRuntime.wrap(function _callee20$(_context20) {
+        return _regeneratorRuntime.wrap(function _callee20$(_context20) {
           while (1) {
             switch (_context20.prev = _context20.next) {
               case 0:
@@ -1169,9 +1149,9 @@ var PaymailClient = /*#__PURE__*/function () {
   _createClass(PaymailClient, [{
     key: "witnessPublic",
     value: function () {
-      var _witnessPublic = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee21(domain) {
+      var _witnessPublic = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime.mark(function _callee21(domain) {
         var apiDescriptor, url, response;
-        return regeneratorRuntime.wrap(function _callee21$(_context21) {
+        return _regeneratorRuntime.wrap(function _callee21$(_context21) {
           while (1) {
             switch (_context21.prev = _context21.next) {
               case 0:
@@ -1215,9 +1195,9 @@ var PaymailClient = /*#__PURE__*/function () {
   }, {
     key: "witnessCheckBaton",
     value: function () {
-      var _witnessCheckBaton = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee22(domain, args) {
+      var _witnessCheckBaton = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime.mark(function _callee22(domain, args) {
         var apiDescriptor, url, response;
-        return regeneratorRuntime.wrap(function _callee22$(_context22) {
+        return _regeneratorRuntime.wrap(function _callee22$(_context22) {
           while (1) {
             switch (_context22.prev = _context22.next) {
               case 0:
@@ -1261,9 +1241,9 @@ var PaymailClient = /*#__PURE__*/function () {
   }, {
     key: "witnessCheckToken",
     value: function () {
-      var _witnessCheckToken = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee23(domain, args) {
+      var _witnessCheckToken = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime.mark(function _callee23(domain, args) {
         var apiDescriptor, url, response;
-        return regeneratorRuntime.wrap(function _callee23$(_context23) {
+        return _regeneratorRuntime.wrap(function _callee23$(_context23) {
           while (1) {
             switch (_context23.prev = _context23.next) {
               case 0:
@@ -1307,9 +1287,9 @@ var PaymailClient = /*#__PURE__*/function () {
   }, {
     key: "witnessCheckSale",
     value: function () {
-      var _witnessCheckSale = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee24(domain, args) {
+      var _witnessCheckSale = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime.mark(function _callee24(domain, args) {
         var apiDescriptor, url, response;
-        return regeneratorRuntime.wrap(function _callee24$(_context24) {
+        return _regeneratorRuntime.wrap(function _callee24$(_context24) {
           while (1) {
             switch (_context24.prev = _context24.next) {
               case 0:
@@ -1353,9 +1333,9 @@ var PaymailClient = /*#__PURE__*/function () {
   }, {
     key: "witnessCheckBuy",
     value: function () {
-      var _witnessCheckBuy = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee25(domain, args) {
+      var _witnessCheckBuy = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime.mark(function _callee25(domain, args) {
         var apiDescriptor, url, response;
-        return regeneratorRuntime.wrap(function _callee25$(_context25) {
+        return _regeneratorRuntime.wrap(function _callee25$(_context25) {
           while (1) {
             switch (_context25.prev = _context25.next) {
               case 0:
@@ -1401,9 +1381,9 @@ var PaymailClient = /*#__PURE__*/function () {
   }, {
     key: "tokenLogo",
     value: function () {
-      var _tokenLogo = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee26(domain, contractId) {
+      var _tokenLogo = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime.mark(function _callee26(domain, contractId) {
         var apiDescriptor, uri;
-        return regeneratorRuntime.wrap(function _callee26$(_context26) {
+        return _regeneratorRuntime.wrap(function _callee26$(_context26) {
           while (1) {
             switch (_context26.prev = _context26.next) {
               case 0:
@@ -1442,9 +1422,9 @@ var PaymailClient = /*#__PURE__*/function () {
   }, {
     key: "tokenInformation",
     value: function () {
-      var _tokenInformation = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee27(domain, contractId) {
+      var _tokenInformation = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime.mark(function _callee27(domain, contractId) {
         var apiDescriptor, uri, response;
-        return regeneratorRuntime.wrap(function _callee27$(_context27) {
+        return _regeneratorRuntime.wrap(function _callee27$(_context27) {
           while (1) {
             switch (_context27.prev = _context27.next) {
               case 0:
@@ -1489,10 +1469,10 @@ var PaymailClient = /*#__PURE__*/function () {
   }, {
     key: "getPublicKey",
     value: function () {
-      var _getPublicKey = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee28(paymail) {
+      var _getPublicKey = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime.mark(function _callee28(paymail) {
         var identityUrl, response, _yield$response$json, pubkey;
 
-        return regeneratorRuntime.wrap(function _callee28$(_context28) {
+        return _regeneratorRuntime.wrap(function _callee28$(_context28) {
           while (1) {
             switch (_context28.prev = _context28.next) {
               case 0:
@@ -1546,7 +1526,7 @@ var PaymailClient = /*#__PURE__*/function () {
   }, {
     key: "getOutputFor",
     value: function () {
-      var _getOutputFor = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee29(aPaymail, senderInfo) {
+      var _getOutputFor = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime.mark(function _callee29(aPaymail, senderInfo) {
         var privateKey,
             addressUrl,
             response,
@@ -1554,7 +1534,7 @@ var PaymailClient = /*#__PURE__*/function () {
             output,
             _args29 = arguments;
 
-        return regeneratorRuntime.wrap(function _callee29$(_context29) {
+        return _regeneratorRuntime.wrap(function _callee29$(_context29) {
           while (1) {
             switch (_context29.prev = _context29.next) {
               case 0:
@@ -1611,9 +1591,9 @@ var PaymailClient = /*#__PURE__*/function () {
   }, {
     key: "verifyPubkeyOwner",
     value: function () {
-      var _verifyPubkeyOwner = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee30(pubkey, paymail) {
+      var _verifyPubkeyOwner = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime.mark(function _callee30(pubkey, paymail) {
         var url, response, body, match;
-        return regeneratorRuntime.wrap(function _callee30$(_context30) {
+        return _regeneratorRuntime.wrap(function _callee30$(_context30) {
           while (1) {
             switch (_context30.prev = _context30.next) {
               case 0:
@@ -1667,7 +1647,7 @@ var PaymailClient = /*#__PURE__*/function () {
   }, {
     key: "isValidSignature",
     value: function () {
-      var _isValidSignature = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee31(message, signature) {
+      var _isValidSignature = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime.mark(function _callee31(message, signature) {
         var paymail,
             pubkey,
             senderPublicKey,
@@ -1676,7 +1656,7 @@ var PaymailClient = /*#__PURE__*/function () {
             senderKeyAddress,
             verified,
             _args31 = arguments;
-        return regeneratorRuntime.wrap(function _callee31$(_context31) {
+        return _regeneratorRuntime.wrap(function _callee31$(_context31) {
           while (1) {
             switch (_context31.prev = _context31.next) {
               case 0:
@@ -1794,10 +1774,10 @@ var PaymailClient = /*#__PURE__*/function () {
   }, {
     key: "getPublicProfile",
     value: function () {
-      var _getPublicProfile = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee32(paymail) {
+      var _getPublicProfile = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime.mark(function _callee32(paymail) {
         var publicProfileUrl, response, body, _yield$response$json3, avatar, name;
 
-        return regeneratorRuntime.wrap(function _callee32$(_context32) {
+        return _regeneratorRuntime.wrap(function _callee32$(_context32) {
           while (1) {
             switch (_context32.prev = _context32.next) {
               case 0:
@@ -1854,13 +1834,13 @@ var PaymailClient = /*#__PURE__*/function () {
   }, {
     key: "sendRawTx",
     value: function () {
-      var _sendRawTx = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee33(targetPaymail, hexTransaction, reference) {
+      var _sendRawTx = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime.mark(function _callee33(targetPaymail, hexTransaction, reference) {
         var metadata,
             receiveTxUrl,
             response,
             body,
             _args33 = arguments;
-        return regeneratorRuntime.wrap(function _callee33$(_context33) {
+        return _regeneratorRuntime.wrap(function _callee33$(_context33) {
           while (1) {
             switch (_context33.prev = _context33.next) {
               case 0:
@@ -1917,10 +1897,10 @@ var PaymailClient = /*#__PURE__*/function () {
   }, {
     key: "getP2pPaymentDestination",
     value: function () {
-      var _getP2pPaymentDestination = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee34(targetPaymail, satoshis) {
+      var _getP2pPaymentDestination = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime.mark(function _callee34(targetPaymail, satoshis) {
         var paymentDestinationUrl, response, _body, body;
 
-        return regeneratorRuntime.wrap(function _callee34$(_context34) {
+        return _regeneratorRuntime.wrap(function _callee34$(_context34) {
           while (1) {
             switch (_context34.prev = _context34.next) {
               case 0:
